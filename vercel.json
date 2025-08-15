@@ -7,5 +7,8 @@
   "env": {},
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "github": { "silent": true }
+  "github": { "silent": true },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
