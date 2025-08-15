@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-![Build](https://img.shields.io/github/actions/workflow/status/sujaysun101/Personal-Portfolio/ci.yml?branch=master&label=build)
+![Build](https://img.shields.io/github/actions/workflow/status/sujaysun101/Personal-Portfolio/ci.yml?branch=main&label=build)
 ![License](https://img.shields.io/github/license/sujaysun101/Personal-Portfolio)
 ![Tech Stack](https://img.shields.io/badge/stack-React%20|%20TypeScript%20|%20Vite%20|%20Tailwind-blue)
 
