@@ -6,50 +6,38 @@ const Accomplishments: React.FC = () => {
     {
       icon: Award,
       title: "Ronald Reagan Presidential Leadership Medal",
-      description: "Received the prestigious Ronald Reagan Presidential Leadership Medal for exceptional leadership and community service contributions.",
-      date: "2023"
+      description: "Earned the Ronald Reagan Leadership Medal, awarded to one graduating student per high school who best exemplifies the characteristics of drive, humility, and service before self.",
+      date: "Apr 2023"
     },
     {
       icon: Trophy,
-      title: "FBLA New York State Competitive Events Winner",
-      description: "Won multiple competitive events at the Future Business Leaders of America New York State level competitions.",
-      date: "2022-2023"
+      title: "1st Place in Data Analysis",
+      description: "Presented a series of housing market recommendations to investors that eventually led to our team winning 1st place at the NYS Future Business Leaders of America State Leadership Conference (FBLA SLC). Presented at the National Leadership Conference (NLC) in Chicago.",
+      date: "Apr 2022"
+    },
+    {
+      icon: Trophy,
+      title: "1st Place in Coding and Programming",
+      description: "Presented a desktop application that allows users to participate and submit responses to randomly generated quizzes about the FBLA organization, which eventually led to my placement of 1st at the New York State Future Business Leaders of America State Leadership Conference (FBLA SLC). Presented at the National Leadership Conference (NLC) in a virtual format.",
+      date: "Apr 2021"
     },
     {
       icon: Star,
-      title: "Congressional Award Gold Medal",
-      description: "Achieved the highest level of the Congressional Award for volunteer public service, personal development, physical fitness, and expedition/exploration.",
-      date: "2023"
+      title: "US Congressional Award Gold Medal",
+      description: "Received the highest honor awarded to civilian youth for over 400 hours of community service, 200 hours of personal development, 200 hours of physical fitness activities, and a four day independently planned and executed expedition.",
+      date: "Jul 2021"
+    },
+    {
+      icon: Star,
+      title: "Microsoft's New England Research and Development (NERD)",
+      description: "Presented “DiamondFinders” to Microsoft’s New England Research and Development (NERD) Team, a project that proposes using existing infrastructure to connect underrepresented tech talent to jobs in the greater Boston area.",
+      date: "Jul 2021"
     },
     {
       icon: Award,
       title: "University at Buffalo Dean's List",
       description: "Named to the University at Buffalo Undergraduate Dean's List for academic excellence with high GPA achievement.",
-      date: "December 2023"
-    },
-    {
-      icon: Trophy,
-      title: "Path to Nobel Prize Feature",
-      description: "Featured researcher recognition for outstanding contributions in machine learning and computer vision research.",
-      date: "2024"
-    },
-    {
-      icon: Star,
-      title: "Roboflow Community Recognition",  
-      description: "Acknowledged for contributions to the computer vision community through innovative projects and technical expertise.",
-      date: "2024"
-    },
-    {
-      icon: Award,
-      title: "NYU 'Stupid' Hackathon Participant",
-      description: "Participated in NYU ITP's creative 'Stupid' Hackathon, developing innovative wearable technology projects and showcasing creative engineering solutions.",
-      date: "2024"
-    },
-    {
-      icon: Trophy,
-      title: "Multiple Internship Leadership Roles",
-      description: "Successfully completed leadership positions at BlackRock, NYC Department of Health, GHub, and various tech organizations.",
-      date: "2022-2025"
+      date: "Dec 2023"
     }
   ];
 
