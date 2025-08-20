@@ -67,7 +67,7 @@ const AppContent = () => {
 
       <button
         onClick={toggle}
-        className="fixed bottom-6 right-6 px-4 py-2 rounded-full text-sm font-medium border border-white/20 dark:border-white/20 border-gray-300 backdrop-blur bg-black/40 dark:bg-black/40 bg-white/70 text-white dark:text-white text-gray-900 shadow hover:shadow-lg transition-all duration-300"
+        className="fixed bottom-6 right-6 px-4 py-2 rounded-full text-sm font-medium border border-white/20 dark:border-white/20 border-gray-300 backdrop-blur dark:bg-black/40 bg-white/70 dark:text-white text-gray-900 shadow hover:shadow-lg transition-all duration-300"
         aria-label="Toggle color theme"
       >
         {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}

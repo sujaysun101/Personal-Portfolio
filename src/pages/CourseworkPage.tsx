@@ -43,30 +43,23 @@ const CourseworkPage: React.FC = () => {
         {
           code: "ECE 1002",
           name: "Introduction to Electrical and Computer Engineering",
-          grade: "A",
+          grade: "In Progress",
           credits: 2,
           description: "<please fix asap>"
         },
         {
           code: "ECE 2004",
-          name: "",
-          grade: "A",
+          name: "Fundamentals of Electric Circuits",
+          grade: "In Progress",
           credits: 3,
-          description: "Boolean algebra, combinational and sequential circuits, FPGA programming."
+          description: "<please fix asap>"
         },
         {
           code: "ECE 2204",
           name: "Digital Logic and State Machine Design",
-          grade: "A-",
+          grade: "In Progress",
           credits: 4,
-          description: "Continuous and discrete-time signals, Fourier transforms, and system analysis."
-        },
-        {
-          code: "EE 401",
-          name: "Embedded Systems",
-          grade: "A",
-          credits: 4,
-          description: "Microcontroller programming, real-time systems, and hardware-software integration."
+          description: "<please fix asap>"
         }
       ]
     },
@@ -74,33 +67,55 @@ const CourseworkPage: React.FC = () => {
       category: "Mathematics & Science",
       courses: [
         {
-          code: "MATH 201",
+          code: "MTH 141",
+          name: "Calculus I",
+          grade: "A",
+          credits: 4,
+          description: "<please fix asap>"
+        },
+        {
+          code: "MTH 142",
+          name: "Calculus II",
+          grade: "A",
+          credits: 4,
+          description: "<please fix asap>"
+        },
+        {
+          code: "MTH 241",
           name: "Calculus III",
+          grade: "A",
+          credits: 4,
+          description: "<please fix asap>"
+        },
+        {
+          code: "MTH 306",
+          name: "Differential Equations",
           grade: "A-",
           credits: 4,
-          description: "Multivariable calculus, vector calculus, and differential equations."
+          description: "<please fix asap>"
         },
         {
-          code: "MATH 301",
-          name: "Linear Algebra",
-          grade: "A",
-          credits: 3,
-          description: "Matrix operations, eigenvalues, vector spaces, and applications."
+          code: "PHY 107",
+          name: "Physics I",
+          grade: "B-",
+          credits: 4,
+          description: "<please fix asap>"
         },
         {
-          code: "PHYS 201",
+          code: "PH 2023",
           name: "Physics II",
-          grade: "A-",
+          grade: "In Progress",
           credits: 4,
-          description: "Electricity, magnetism, and electromagnetic waves."
+          description: "<please fix asap>"
         },
         {
-          code: "STAT 301",
-          name: "Probability & Statistics",
-          grade: "A",
-          credits: 3,
-          description: "Probability theory, statistical inference, and data analysis."
+          code: "CHE 107 + 127",
+          name: "General Chemistry for Engineers + Lab",
+          grade: "A-",
+          credits: 4,
+          description: "<please fix asap>"
         }
+
       ]
     }
   ];
