@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, createContext, useContext, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Starfield from './components/Starfield';
 import Navigation from './components/Navigation';
@@ -14,9 +14,15 @@ import ResearchPage from './pages/ResearchPage';
 import AccomplishmentsPage from './pages/AccomplishmentsPage';
 import ContactPage from './pages/ContactPage';
 
-// Component to handle route-based effects
+// Theme context
+type Theme = 'light' | 'dark';
+const ThemeContext = createContext<{theme: Theme; toggle: () => void}>({theme: 'dark', toggle: () => {}});
+export const useTheme = () => useContext(ThemeContext);
+
+// Component to handle route-based effects & layout
 const AppContent = () => {
   const location = useLocation();
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const observerOptions = {
@@ -55,10 +61,18 @@ const AppContent = () => {
   }, [location.pathname]); // Re-run when pathname changes
 
   return (
-    <div className="min-h-screen text-white relative">
-      <Starfield />
+    <div className={`min-h-screen relative ${theme === 'dark' ? 'text-white bg-black' : 'text-gray-900 bg-white'} transition-colors duration-300`}>      
+      {theme === 'dark' && <Starfield />}
       <Navigation />
-      
+
+      <button
+        onClick={toggle}
+        className="fixed bottom-6 right-6 px-4 py-2 rounded-full text-sm font-medium border border-white/20 dark:border-white/20 border-gray-300 backdrop-blur bg-black/40 dark:bg-black/40 bg-white/70 text-white dark:text-white text-gray-900 shadow hover:shadow-lg transition-all duration-300"
+        aria-label="Toggle color theme"
+      >
+        {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+      </button>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/education" element={<EducationPage />} />
@@ -69,17 +83,33 @@ const AppContent = () => {
         <Route path="/accomplishments" element={<AccomplishmentsPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
-      
+
       <Footer />
     </div>
   );
 };
 
 function App() {
+  const [theme, setTheme] = useState<Theme>(() => {
+    const stored = localStorage.getItem('pref-theme');
+    if (stored === 'light' || stored === 'dark') return stored;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') root.classList.add('dark'); else root.classList.remove('dark');
+    localStorage.setItem('pref-theme', theme);
+  }, [theme]);
+
+  const toggle = () => setTheme(t => t === 'dark' ? 'light' : 'dark');
+
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <ThemeContext.Provider value={{theme, toggle}}>
+      <Router>
+        <AppContent />
+      </Router>
+    </ThemeContext.Provider>
   );
 }
 
