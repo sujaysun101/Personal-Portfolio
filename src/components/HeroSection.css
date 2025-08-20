@@ -1,0 +1,95 @@
+.hero-background-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.decorative-group {
+    position: absolute;
+    width: 1758.87px;
+    height: 956.08px;
+    left: -367.99px;
+    top: -226.99px;
+    transform: rotate(-20deg);
+}
+
+.deco-rect {
+    box-sizing: border-box;
+    position: absolute;
+    height: 74.54px;
+    background: radial-gradient(27.28% 87.97% at 50% 100%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 0px;
+}
+
+.deco-rect-1 {
+    width: 1197.41px;
+    left: 407.76px;
+    top: 89.06px;
+    transform: matrix(0.62, -0.78, 0.98, 0.2, 0, 0);
+}
+
+.deco-rect-2 {
+    width: 1197.41px;
+    left: -39.84px;
+    top: 11.39px;
+    transform: matrix(0.62, -0.78, 0.98, 0.2, 0, 0);
+}
+
+.deco-rect-3 {
+    width: 1366.83px;
+    left: -121.45px;
+    top: -18.32px;
+    background: radial-gradient(27.28% 87.97% at 60.38% 0.03%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+    transform: matrix(0.62, -0.78, 0.98, 0.2, 0, 0);
+}
+
+.deco-rect-4 {
+    width: 1321.02px;
+    left: 480.79px;
+    top: 7.19px;
+    transform: matrix(0.62, -0.78, 0.98, 0.2, 0, 0);
+}
+
+.deco-rect-5 {
+    width: 1321.02px;
+    left: 33.2px;
+    top: -70.49px;
+    transform: matrix(0.62, -0.78, 0.98, 0.2, 0, 0);
+}
+
+.deco-rect-6 {
+    width: 1321.02px;
+    left: 106.24px;
+    top: -55.58px;
+    transform: matrix(0.62, -0.78, 0.98, 0.2, 0, 0);
+}
+
+.deco-rect-7 {
+    width: 1197.41px;
+    left: 179.27px;
+    top: 56.13px;
+    transform: matrix(0.62, -0.78, 0.98, 0.2, 0, 0);
+}
+
+.deco-rect-8 {
+    width: 1321.02px;
+    left: 252.31px;
+    top: -25.75px;
+    transform: matrix(0.62, -0.78, 0.98, 0.2, 0, 0);
+}
+
+.deco-rect-9 {
+    width: 1321.02px;
+    left: 325.34px;
+    top: -10.83px;
+    transform: matrix(0.62, -0.78, 0.98, 0.2, 0, 0);
+}
+
+.hero-section-background {
+  background-image: url('/hero-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

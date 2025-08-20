@@ -1,15 +1,16 @@
 import React from 'react';
-import { ChevronDown, Download, Mail } from 'lucide-react';
-import backgroundImage from '../assets/images/hero-background.png';
+import { Download, Mail } from 'lucide-react';
+import backGroundImage from '../assets/images/hero-background.png';
 
 const HeroSection: React.FC = () => {
   return (
     <section 
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
+      style={{ 
+        backgroundImage: `url(${backGroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       {/* Soft spotlight to improve legibility without hiding stars */}
@@ -67,12 +68,6 @@ const HeroSection: React.FC = () => {
           </div>
 
       <div className="hidden md:block" />
-        </div>
-      </div>
-    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-        <div className="flex flex-col items-center">
-          <span className="text-gray-400 text-sm mb-2">Scroll to explore</span>
-          <ChevronDown className="text-white opacity-60" size={32} />
         </div>
       </div>
     <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-white/0 via-white/30 to-white/0 z-10" />
