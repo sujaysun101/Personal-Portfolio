@@ -13,6 +13,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import ResearchPage from './pages/ResearchPage';
 import AccomplishmentsPage from './pages/AccomplishmentsPage';
 import ContactPage from './pages/ContactPage';
+import ExperiencePage from './pages/ExperiencePage';
 
 // Theme context
 type Theme = 'light' | 'dark';
@@ -75,6 +76,7 @@ const AppContent = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/education" element={<EducationPage />} />
         <Route path="/coursework" element={<CourseworkPage />} />
         <Route path="/skills" element={<SkillsPage />} />

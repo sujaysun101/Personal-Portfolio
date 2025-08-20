@@ -17,6 +17,7 @@ const Navigation: React.FC = () => {
 
     const navItems = [
     { to: '/', label: 'Home' },
+    { to: '/experience', label: 'Experience' },
     { 
       label: 'Education',
       subItems: [

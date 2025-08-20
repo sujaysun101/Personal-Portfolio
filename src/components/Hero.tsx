@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
               View My Work
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="px-8 py-3 glass rounded-lg text-white font-medium glass-hover transition-all duration-300"
             >
               Get In Touch

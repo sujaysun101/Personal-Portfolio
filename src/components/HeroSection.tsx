@@ -1,11 +1,19 @@
 import React from 'react';
 import { ChevronDown, Download, Mail } from 'lucide-react';
+import backgroundImage from '../assets/images/hero-background.png';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section 
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       {/* Soft spotlight to improve legibility without hiding stars */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.08),transparent_70%)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_30%_40%,rgba(0,0,0,0.5),transparent_70%)]" />
       <div className="container mx-auto px-6 relative z-10 h-full">
         <div className="grid md:grid-cols-2 gap-12 items-center min-h-screen py-20">
           <div className="floating text-left">
@@ -35,10 +43,10 @@ const HeroSection: React.FC = () => {
                 <Download className="mr-2 group-hover:animate-bounce" size={18} />
                 Download Resume
               </button>
-              <button className="px-6 py-3 glass rounded-lg text-white font-medium glass-hover transition-all duration-300 border border-white/20 flex items-center justify-center">
+              <a href="/contact" className="px-6 py-3 glass rounded-lg text-white font-medium glass-hover transition-all duration-300 border border-white/20 flex items-center justify-center">
                 <Mail className="mr-2" size={18} />
                 Get In Touch
-              </button>
+              </a>
             </div>
 
             {/* Professional Stats */}

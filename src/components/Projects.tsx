@@ -4,6 +4,22 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects: React.FC = () => {
   const projects = [
     {
+      title: "Real-Time Election Predictor/Analyzer | ElectThemNOW!",
+      description: "Building ElectThemNOW!, a real-time U.S. election polling aggregation and visualization platform delivering transparent, interactive insights across presidential, congressional, and local races. Automated daily polling updates with open-source aggregation methods, ensuring credibility and reproducibility through publicly available poll metadata. Enhanced election analysis and forecasting by integrating historical comparisons, live race status, and toss-up identifications into a user-friendly interactive map.",
+      tech: ["React TS", "FastAPI", "Docker"],
+      github: "#",
+      demo: "#",
+      image: "https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      title: "Resume Tailor Extension | SuitUp",
+      description: "Designing an AI-driven platform that streamlines the job search by detecting postings, analyzing descriptions, and tailoring resumes with real-time feedback. Built a Chrome extension, web dashboard, and FastAPI backend to enable resume optimization, intelligent auto-fill, and automated submissions across major job boards. Integrated Google Drive/Docs for seamless document management and implemented a modern, Gemini-inspired UI for intuitive user workflows. Enhanced job-seeking efficiency through real-time AI analysis, transparent application tracking, and end-to-end automation.",
+      tech: ["ShadCN UI", "Clerk Auth", "Google Cloud", "FastAPI", "Chrome Extension", "AI"],
+      github: "#",
+      demo: "#",
+      image: "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
       title: "MoneySimp - Personal Finance Tracker",
       description: "AI-powered finance tracker with manual expense tracking, bill scanning using OCR, budget settings, monthly insights with charts, and AI-generated personal finance tips with chatbot integration.",
       tech: ["React TS", "Firebase", "Genkit", "OCR", "AI Integration"],

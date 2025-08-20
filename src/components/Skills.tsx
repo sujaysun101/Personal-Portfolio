@@ -4,23 +4,23 @@ const Skills: React.FC = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
-      skills: ["Python", "Java", "JavaScript", "TypeScript", "C++", "MATLAB", "HTML", "CSS", "SQL"]
+      skills: ["Python", "Java", "MATLAB", "HTML", "CSS", "JavaScript/TypeScript", "C++", "SQL"]
     },
     {
-      title: "Frameworks & Libraries",
-      skills: ["React JS/TS", "Django", "TensorFlow", "PyTorch", "TKinter", "ShadCN UI", "Ant Design"]
+      title: "Frameworks",
+      skills: ["TensorFlow", "PyTorch", "Django", "React JS/TS", "TKinter"]
     },
     {
-      title: "Technologies & Tools",
-      skills: ["Firebase", "Supabase", "VS Code", "GitHub Copilot", "Git", "Node.js", "Genkit"]
+      title: "Technologies",
+      skills: ["Figma", "Firebase", "Supabase", "VS Code", "GitHub Copilot", "PostgreSQL"]
     },
     {
-      title: "Design & Development",
-      skills: ["UI/UX Design", "Product Management", "CAD", "Figma", "Responsive Design"]
+      title: "Hardware",
+      skills: ["Bandsaw Cutting", "Soldering", "Circuitry"]
     },
     {
-      title: "Hardware & Other",
-      skills: ["Bandsaw Cutting", "Soldering", "Circuitry", "LLM Prompting", "Data Analysis", "Machine Learning"]
+      title: "Other Skills",
+      skills: ["Git", "Product Management", "CAD", "LLM Prompting"]
     }
   ];
 
