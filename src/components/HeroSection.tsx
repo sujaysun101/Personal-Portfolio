@@ -1,17 +1,11 @@
 import React from 'react';
 import { Download, Mail } from 'lucide-react';
-import backGroundImage from '../assets/images/hero-background.png';
+import './HeroSection.css';
 
 const HeroSection: React.FC = () => {
   return (
     <section 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{ 
-        backgroundImage: `url(${backGroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
+      className="min-h-screen flex items-center justify-center relative overflow-hidden hero-section-background"
     >
       {/* Soft spotlight to improve legibility without hiding stars */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_30%_40%,rgba(0,0,0,0.5),transparent_70%)]" />
