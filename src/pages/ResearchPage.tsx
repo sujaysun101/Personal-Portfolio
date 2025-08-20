@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, Calendar, Users } from 'lucide-react';
+import PageHero from '../components/PageHero';
 
 const ResearchPage: React.FC = () => {
   const researchProjects = [
@@ -42,13 +43,8 @@ const ResearchPage: React.FC = () => {
 
   return (
     <div className="pt-20 min-h-screen">
-      <div className="container mx-auto px-6 py-16">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4 gradient-text">Research</h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Academic research in Computer Science and Electrical Engineering
-          </p>
-        </div>
+      <PageHero title="Research" subtitle="Academic research in Computer Science and Electrical Engineering" />
+      <div className="container mx-auto px-6 pb-24">
 
         {/* Research Interests */}
         <div className="section-fade mb-20">
