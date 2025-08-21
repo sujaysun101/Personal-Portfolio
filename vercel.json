@@ -1,7 +1,8 @@
 {
   "version": 2,
   "framework": "vite",
-  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "buildCommand": "chmod +x node_modules/.bin/* && npm run build",
   "outputDirectory": "dist",
   "github": { "silent": true },
   "rewrites": [
