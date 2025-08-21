@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 // Note: MorphSVGPlugin is a premium plugin from Club GreenSock.
 // You will need to have the plugin files in your project for this to work.
