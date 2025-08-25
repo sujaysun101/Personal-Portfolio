@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Mail } from 'lucide-react';
+import { FileText, Mail } from 'lucide-react';
 import './HeroSection.css';
 
 const HeroSection: React.FC = () => {
@@ -34,10 +34,15 @@ const HeroSection: React.FC = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button className="group px-6 py-3 cosmic-gradient text-white rounded-lg font-medium hover:opacity-90 transition-all duration-300 flex items-center justify-center">
-                <Download className="mr-2 group-hover:animate-bounce" size={18} />
-                Download Resume
-              </button>
+              <a
+                href="https://docs.google.com/document/d/1OoGFOhs8QsDIEHWBoxDKK_cwxVs5HLkWrxtjNNiTsfI/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group px-6 py-3 cosmic-gradient text-white rounded-lg font-medium hover:opacity-90 transition-all duration-300 flex items-center justify-center"
+              >
+                <FileText className="mr-2 group-hover:animate-bounce" size={18} />
+                Find My Resume
+              </a>
               <a href="/contact" className="px-6 py-3 glass rounded-lg text-white font-medium glass-hover transition-all duration-300 border border-white/20 flex items-center justify-center">
                 <Mail className="mr-2" size={18} />
                 Get In Touch
@@ -47,8 +52,8 @@ const HeroSection: React.FC = () => {
             {/* Professional Stats */}
             <div className="grid grid-cols-3 gap-4">
               <div className="glass rounded-lg p-4 backdrop-blur-lg border border-white/20 text-center">
-                <div className="text-2xl font-bold gradient-text mb-1">20+</div>
-                <div className="text-gray-400 text-xs">Skills</div>
+                <div className="text-2xl font-bold gradient-text mb-1">3+</div>
+                <div className="text-gray-400 text-xs">Publications</div>
               </div>
               <div className="glass rounded-lg p-4 backdrop-blur-lg border border-white/20 text-center">
                 <div className="text-2xl font-bold gradient-text mb-1">10+</div>

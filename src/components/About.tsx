@@ -10,19 +10,26 @@ const About: React.FC = () => {
             About Me
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
               <p className="text-gray-300 text-lg leading-relaxed">
-                I'm a Computer Engineering student at NYU with a passion for full-stack development, 
-                UI/UX design, and machine learning. With experience across multiple internships and 
-                research positions, I've developed expertise in building AI-powered applications and 
-                leading technical teams.
+                I'm an Electrical and Computer Engineering student at NYU who loves building delightful,
+                human-centered software. My work blends full-stack development, UI/UX design, and applied
+                machine learning — I enjoy taking ideas from whiteboard to production and making complex
+                systems feel simple and useful.
               </p>
+
               <p className="text-gray-300 text-lg leading-relaxed">
-                Currently working as a UI/UX Intern at Placera, 
-                I've contributed to various projects ranging from interactive data visualization tools to 
-                AI-powered customer service applications. I'm also the founder of Sundar Tech Services, 
-                providing comprehensive tech solutions across NYC.
+                Over the past few years I've interned across product and research teams where I shipped
+                AI-powered features, interactive data visualizations, and scalable backend services. Right
+                now I'm a UI/UX Intern at Placera and I also run Sundar Tech Services, where I help small
+                teams and local businesses build modern web apps.
+              </p>
+
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Outside of work I explore creative uses of machine learning, mentor students, and enjoy
+                contributing to open-source projects. I'm always open to collaborating on interesting
+                products — feel free to reach out if you'd like to build something together.
               </p>
             </div>
             
@@ -60,6 +67,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
+  {/* Newsletter widget moved to homepage and popup component */}
     </section>
   );
 };

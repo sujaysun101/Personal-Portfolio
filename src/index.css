@@ -133,3 +133,33 @@ body {
 .border-gradient {
   border-image: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent) 1;
 }
+
+/* Ensure a clean black footer band covers the bottom edge of the viewport
+   This prevents visual seams when background effects or gradients don't reach the bottom. */
+.page-bottom-fill {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 96px; /* default tall enough to cover common banner gaps */
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 35%);
+  z-index: 0; /* sit above the starfield (-1) but below page content and popup */
+  pointer-events: none; /* non-interactive so it doesn't block clicks */
+}
+
+/* Responsive adjustments for the bottom fill */
+@media (max-height: 720px) {
+  .page-bottom-fill { height: 72px; }
+}
+@media (min-height: 1200px) {
+  .page-bottom-fill { height: 140px; }
+}
+
+/* small container helper to improve responsiveness across pages */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}

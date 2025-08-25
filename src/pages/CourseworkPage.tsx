@@ -12,28 +12,42 @@ const CourseworkPage: React.FC = () => {
           name: "Introduction to Computer Science I",
           grade: "B+",
           credits: 4,
-          description: "Fundamentals of programming using Python. <please fix asap>"
+          description: "Fundamentals of programming using Python: variables, data types, expressions, control flow, functions, input/output, data storage, networking, security, selection, sorting, iteration, aggregate data structures such as lists and collections."
         },
         {
           code: "CSE 199",
           name: "Seminar",
           grade: "A-",
           credits: 3,
-          description: "<please fix asap>"
+          description: "Exploration of how the internet works, including web infrastructure, digital communication, cybersecurity basics, social impacts, and hands-on website creation."
         },
         {
           code: "CSE 116",
           name: "Introduction to Computer Science II",
           grade: "A-",
           credits: 4,
-          description: "<please fix asap>"
+          description: "Object-oriented programming and software design in Java, tackling inheritance, polymorphism, core data structures, algorithmic thinking, and problem-solving with code."
         },
         {
           code: "CSE 191",
           name: "Introduction to Discrete Structures",
           grade: "A-",
           credits: 4,
-          description: "<please fix asap>"
+          description: "Introduction to discrete mathematics with topics such as logic, proof methods, sets, combinatorics, recursion, and graph theory applications."
+        },
+        {
+          code: "STS-UY 1004",
+          name: "Introduction to Science and Technology",
+          grade: "A",
+          credits: 4,
+          description: "Explores how scientific knowledge and technological innovations emerge and interact with cultural, ethical, and political forces—drawing on real-world cases and interdisciplinary analysis."
+        },
+        {
+          code: "STS-UY 2144",
+          name: "Ethics and Technology",
+          grade: "A",
+          credits: 4,
+          description: "Investigates the ethical dimensions of technology, analyzing how technological advances influence—and are influenced by—moral values, social responsibilities, equity, privacy, and professional conduct in engineering and beyond."
         }
       ]
     },
@@ -41,25 +55,25 @@ const CourseworkPage: React.FC = () => {
       category: "Electrical Engineering Core",
       courses: [
         {
-          code: "ECE 1002",
+          code: "ECE-UY 1002",
           name: "Introduction to Electrical and Computer Engineering",
-          grade: "In Progress",
+          grade: "A",
           credits: 2,
-          description: "<please fix asap>"
+          description: "Survey course introducing major topics in electrical and computer engineering—such as power systems, electronics, networking, microprocessors, embedded systems, communications, control, and signal processing."
         },
         {
-          code: "ECE 2004",
+          code: "ECE-UY 2004",
           name: "Fundamentals of Electric Circuits",
           grade: "In Progress",
-          credits: 3,
-          description: "<please fix asap>"
+          credits: 4,
+          description: "In-depth analysis of DC and AC electrical circuits, exploring circuit laws, transient and steady-state responses, phasors, impedance, and circuit theorems through both lecture and hands-on labs."
         },
         {
-          code: "ECE 2204",
+          code: "ECE-UY 2204",
           name: "Digital Logic and State Machine Design",
           grade: "In Progress",
           credits: 4,
-          description: "<please fix asap>"
+          description: "Design and implementation of digital systems, featuring number systems, Boolean algebra, combinational and sequential logic, circuit minimization, and state machine concepts."
         }
       ]
     },
@@ -71,49 +85,49 @@ const CourseworkPage: React.FC = () => {
           name: "Calculus I",
           grade: "A",
           credits: 4,
-          description: "<please fix asap>"
+          description: "Comprehensive study of differential calculus covering limits, continuity, derivatives, optimization, and the foundations of integration."
         },
         {
           code: "MTH 142",
           name: "Calculus II",
           grade: "A",
           credits: 4,
-          description: "<please fix asap>"
+          description: "Advanced calculus focusing on integration techniques, sequences and series, convergence tests, Taylor expansions, polar and parametric forms."
         },
         {
           code: "MTH 241",
           name: "Calculus III",
           grade: "A",
           credits: 4,
-          description: "<please fix asap>"
+          description: "Multivariable calculus with partial derivatives, Lagrange multipliers, double and triple integrals, vector calculus, and applications to physics and engineering."
         },
         {
           code: "MTH 306",
           name: "Differential Equations",
           grade: "A-",
           credits: 4,
-          description: "<please fix asap>"
+          description: "Study of ordinary differential equations, solvable systems, Laplace transforms, phase plane analysis, with real-world problem modeling and solution methods."
         },
         {
           code: "PHY 107",
           name: "Physics I",
           grade: "B-",
           credits: 4,
-          description: "<please fix asap>"
+          description: "Survey of classical mechanics, covering motion, forces, work and energy, rotation, oscillations, laboratory measurements, and basic experiment design."
         },
         {
-          code: "PH 2023",
-          name: "Physics II",
+          code: "PH-UY 2023 + 2131",
+          name: "Physics II + Lab",
           grade: "In Progress",
           credits: 4,
-          description: "<please fix asap>"
+          description: "Study of electricity, magnetism, and fluid dynamics, coupled with laboratory experiments covering electric and magnetic fields, fluid behavior, waves, optics, thermodynamics, and data analysis."
         },
         {
           code: "CHE 107 + 127",
           name: "General Chemistry for Engineers + Lab",
           grade: "A-",
           credits: 4,
-          description: "<please fix asap>"
+          description: "Foundational general chemistry paired with laboratory skills: atomic structure, thermochemistry, solution chemistry, kinetics, equilibrium, hands-on experiments, and safety practices."
         }
 
       ]
@@ -124,6 +138,7 @@ const CourseworkPage: React.FC = () => {
     if (grade === 'A') return 'text-green-400';
     if (grade === 'A-') return 'text-green-300';
     if (grade === 'B+') return 'text-yellow-400';
+    if (grade === 'B' || grade === 'B-') return 'text-yellow-400';
     return 'text-gray-400';
   };
 

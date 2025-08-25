@@ -1,79 +1,73 @@
+
 .timeline-container {
+  /* Spine position can be adjusted; using a fixed pixel value keeps the line stable while
+     allowing the content to take the remaining width so boxes reach the right edge. */
+  --timeline-spine: 180px;
   position: relative;
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  max-width: none; /* allow full-bleed right expansion */
+  margin: 0;
+  /* left padding gives room for the spine; remove right padding so content can extend to window edge */
+  padding: 40px 0 80px 40px;
 }
 
-.timeline-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100%;
-  background-color: #333;
-}
+/* vertical spine at 25% */
+/* spine is now a separate fixed element (timeline-spine-fixed) positioned with JS
+  so it can extend to the top of the viewport and be color-filled interactively. */
 
 .timeline-item {
-  position: relative;
-  width: 50%;
-  padding: 20px 40px;
+  display: grid;
+  grid-template-columns: var(--timeline-spine) 1fr;
+  gap: 0 20px;
+  width: 100%;
+  padding: 12px 0;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.5s, transform 0.5s;
+  align-items: start;
+  margin-bottom: 2in;
 }
 
-.timeline-item:nth-child(odd) {
-  left: 0;
-  padding-right: 60px;
-  text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-  left: 50%;
-  padding-left: 60px;
-}
-
-.timeline-item.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.timeline-dot {
-  content: '';
-  position: absolute;
-  top: 30px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #555;
-  border: 3px solid #333;
-  z-index: 1;
-}
-
-.timeline-item:nth-child(odd) .timeline-dot {
-  right: -8px;
-}
-
-.timeline-item:nth-child(even) .timeline-dot {
-  left: -8px;
-}
-
-.timeline-item.in-view .timeline-dot {
-  background-color: #007bff;
-  border-color: #007bff;
-  animation: fill-dot 0.5s forwards;
-}
+/* Dots removed: timeline items are now transparent and no dot elements are used */
 
 .timeline-content {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 8px;
+  grid-column: 2;
+  /* keep layout and width, but visual styling moved to .transparent */
+  padding: 20px 26px 18px;
+  border-radius: 12px;
   position: relative;
+  z-index: 2;
+  width: calc(100vw - var(--timeline-spine) - 48px);
+  box-sizing: border-box;
 }
+
+/* explicit transparent mode to reveal starry animation behind the timeline */
+.timeline-content.transparent {
+  /* Subtle glass effect so the starry background is visible but content stays readable */
+  background: rgba(10, 14, 22, 0.45) !important; /* dark tint with transparency */
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  backdrop-filter: blur(6px) !important;
+  color: inherit !important;
+}
+
+
+/* Removed alternating dot logic */
+
+/* (duplicate section removed) */
+
+/* Light theme adjustments (when body has light styles) */
+html:not(.dark) .timeline-content {
+  background: rgba(0,0,0,0.04);
+  border-color: rgba(0,0,0,0.08);
+}
+html:not(.dark) .timeline-title { color: #111; }
+html:not(.dark) .timeline-company { color: #444; }
+html:not(.dark) .timeline-date { color: #555; }
+html:not(.dark) .timeline-container::before { background-image: linear-gradient(to bottom,#0a84ff,#999); }
+html:not(.dark) .timeline-dot { border-color: #0a84ff; background:#fff; }
+html:not(.dark) .timeline-item.in-view .timeline-dot { background:#0a84ff; }
 
 .timeline-date {
   font-size: 0.9em;
@@ -82,16 +76,76 @@
 }
 
 .timeline-title {
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 1.15em;
+  font-weight: 600;
+  letter-spacing: .25px;
   color: #fff;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 .timeline-company {
-  font-size: 1.1em;
+  font-size: .95em;
+  font-weight: 500;
   color: #ccc;
   margin-bottom: 10px;
+  letter-spacing: .25px;
+}
+
+ .timeline-bullets {
+  list-style: disc;
+  margin: 0 0 0 1.1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  font-size: .85rem;
+  line-height: 1.25rem;
+  color: #e5e5e5;
+}
+/* skill badges container */
+.timeline-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+.timeline-skills .tech-badge {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  color: #e6eef8;
+  font-size: 0.8rem;
+}
+
+/* ensure the skills area doesn't overlap list content on small screens */
+@media (max-width: 640px) {
+  .timeline-content { padding: 18px; }
+  .timeline-skills { gap: 6px; margin-top: 10px; }
+  .timeline-skills .tech-badge { font-size: 0.75rem; padding: 5px 8px; }
+}
+.fade-slide-down {
+  opacity: 1 !important;
+  transform: translateX(0) translateY(0) scale(1);
+  transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+}
+.fade-slide-up {
+  opacity: 0 !important;
+  transform: translateX(60px) translateY(40px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1) 120ms, transform 0.8s cubic-bezier(.4,0,.2,1) 120ms; /* delayed hide when scrolling up */
+}
+html:not(.dark) .timeline-bullets { color:#222; }
+
+.timeline-content:hover {
+  background: rgba(255,255,255,0.09);
+  box-shadow: 0 4px 18px -4px rgba(0,0,0,0.4);
+}
+html:not(.dark) .timeline-content:hover {
+  background: rgba(0,0,0,0.06);
+  box-shadow: 0 4px 18px -4px rgba(0,0,0,0.15);
 }
 
 @keyframes fill-dot {
@@ -103,11 +157,49 @@
   }
 }
 
-.timeline-container::before {
-    background: linear-gradient(to bottom, #007bff 0%, #333 0%);
-    transition: background 1s ease-out;
+/* removed old container ::before gradient rules; interactive fill uses .timeline-spine-fill */
+
+/* Mode control UI (dev only) */
+/* removed mode wrapper UI (Normal/Tweak buttons) */
+
+/* fixed spine element: track (gray) with absolute fill (blue) */
+.timeline-spine-fixed {
+  position: fixed;
+  top: 0;
+  left: var(--timeline-spine, 180px);
+  transform: translateX(-50%);
+  width: 8px;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  /* gray track */
+  background: #2b2b2b;
+  border-radius: 4px;
 }
 
-.timeline-item.in-view ~ .timeline-container::before {
-    background: linear-gradient(to bottom, #007bff 100%, #333 100%);
+/* centered blue stripe on top of the gray track (static) */
+.timeline-spine-fixed::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #0a84ff;
+  border-radius: 2px;
+}
+
+/* per-event segments stacked from top to bottom */
+/* per-event spine segments removed - spine is a static element now */
+
+.timeline-container.fast .timeline-item.fast .timeline-content,
+.timeline-item.fast.fade-slide-down,
+.timeline-item.fast.fade-slide-up {
+  transition-duration: 300ms !important;
+}
+.timeline-container.slow .timeline-item.slow .timeline-content,
+.timeline-item.slow.fade-slide-down,
+.timeline-item.slow.fade-slide-up {
+  transition-duration: 900ms !important;
 }

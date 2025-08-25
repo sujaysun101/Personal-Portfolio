@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Starfield from './components/Starfield';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import ChatbotWidget from './components/ChatbotWidget';
 
 // Pages
 import Home from './pages/Home';
@@ -14,6 +15,7 @@ import ResearchPage from './pages/ResearchPage';
 import AccomplishmentsPage from './pages/AccomplishmentsPage';
 import ContactPage from './pages/ContactPage';
 import ExperiencePage from './pages/ExperiencePage';
+import TestimonialsPage from './pages/TestimonialsPage';
 
 // Theme context
 type Theme = 'light' | 'dark';
@@ -23,7 +25,7 @@ export const useTheme = () => useContext(ThemeContext);
 // Component to handle route-based effects & layout
 const AppContent = () => {
   const location = useLocation();
-  const { theme, toggle } = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const observerOptions = {
@@ -66,13 +68,7 @@ const AppContent = () => {
       {theme === 'dark' && <Starfield />}
       <Navigation />
 
-      <button
-        onClick={toggle}
-        className="fixed bottom-6 right-6 px-4 py-2 rounded-full text-sm font-medium border border-white/20 dark:border-white/20 border-gray-300 backdrop-blur dark:bg-black/40 bg-white/70 dark:text-white text-gray-900 shadow hover:shadow-lg transition-all duration-300"
-        aria-label="Toggle color theme"
-      >
-        {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-      </button>
+  {/* Theme toggle removed as requested */}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -83,10 +79,14 @@ const AppContent = () => {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/research" element={<ResearchPage />} />
         <Route path="/accomplishments" element={<AccomplishmentsPage />} />
+  <Route path="/testimonials" element={<TestimonialsPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
 
-      <Footer />
+  <Footer />
+  <ChatbotWidget />
+  {/* Site-wide bottom visual fill to prevent seams on any page */}
+  <div className="page-bottom-fill" aria-hidden />
     </div>
   );
 };

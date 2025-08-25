@@ -91,8 +91,8 @@ const HeroSection: React.FC = () => {
             {/* Professional Stats */}
             <div className="grid grid-cols-3 gap-4">
               <div className="glass rounded-lg p-4 backdrop-blur-lg border border-white/20 text-center">
-                <div className="text-2xl font-bold gradient-text mb-1">20+</div>
-                <div className="text-gray-400 text-xs">Skills</div>
+                <div className="text-2xl font-bold gradient-text mb-1">3+</div>
+                <div className="text-gray-400 text-xs">Publications</div>
               </div>
               <div className="glass rounded-lg p-4 backdrop-blur-lg border border-white/20 text-center">
                 <div className="text-2xl font-bold gradient-text mb-1">10+</div>

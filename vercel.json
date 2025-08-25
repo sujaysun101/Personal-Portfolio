@@ -5,6 +5,10 @@
   "buildCommand": "chmod +x node_modules/.bin/* && npm run build",
   "outputDirectory": "dist",
   "github": { "silent": true },
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "package.json", "use": "@vercel/static-build" }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

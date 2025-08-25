@@ -34,6 +34,7 @@ const Navigation: React.FC = () => {
         { to: '/research', label: 'Research' },
       ]
     },
+  { to: '/testimonials', label: 'Testimonials' },
     { to: '/contact', label: 'Contact' },
   ];
 

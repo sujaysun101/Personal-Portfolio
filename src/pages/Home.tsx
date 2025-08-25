@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import HeroSection from '../components/HeroSection';
 import About from '../components/About';
+import SubscribePopup from '../components/SubscribePopup';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Code, Trophy, Mail, Briefcase, BookOpen } from 'lucide-react';
+import { GraduationCap, Code, Trophy, Mail, Briefcase, BookOpen, Star } from 'lucide-react';
 
 const Home: React.FC = () => {
   // Re-trigger animations when component mounts
@@ -42,6 +43,12 @@ const Home: React.FC = () => {
       description: 'Software development and engineering projects'
     },
     {
+      to: '/experience',
+      icon: <Briefcase className="w-8 h-8" />,
+      title: 'Experience',
+      description: 'Professional roles and timeline'
+    },
+    {
       to: '/research',
       icon: <BookOpen className="w-8 h-8" />,
       title: 'Research',
@@ -52,6 +59,12 @@ const Home: React.FC = () => {
       icon: <Trophy className="w-8 h-8" />,
       title: 'Accomplishments',
       description: 'Awards, certifications, and achievements'
+    },
+    {
+      to: '/testimonials',
+      icon: <Star className="w-8 h-8" />,
+      title: 'Testimonials',
+      description: 'References and recommendation letters'
     },
     {
       to: '/contact',
@@ -120,6 +133,46 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* Inline Subscribe widget shown on the homepage below Explore section */}
+      <div className="mt-16 mb-16 flex justify-center">
+        <div className="glass rounded-lg p-8 w-full max-w-md">
+          <h3 className="text-2xl font-bold text-center text-purple-300 mb-4">Stay Updated on Sujay's Journey</h3>
+          <p className="text-gray-400 text-center mb-6">Subscribe to receive personalized updates whenever Sujay adds a new course, project, experience, skill, testimonial, research, accomplishment, or updates contact info!</p>
+          <form
+            className="flex flex-col gap-4"
+            onSubmit={e => {
+              e.preventDefault();
+              fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: (e.target as any).email?.value, phone: (e.target as any).phone?.value }) }).then(()=>{
+                alert('Thank you for subscribing!');
+              }).catch(()=>{
+                alert('Thanks — subscription recorded (stub).');
+              });
+            }}
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email address"
+              className="bg-gray-900/60 border border-purple-700 rounded px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Or your phone number"
+              className="bg-gray-900/60 border border-purple-700 rounded px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <div className="flex items-center gap-3 mt-2">
+              <button type="submit" className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded transition-all duration-200">Subscribe</button>
+            </div>
+            <p className="text-xs text-gray-500 text-center mt-2">You will only receive updates about major changes to Sujay's portfolio. Unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+
+      {/* Subscribe popup (fixed bottom-left), respects sessionStorage so closing hides it for the session */}
+      <SubscribePopup />
+  {/* Visual bottom fill to avoid banner seam */}
+  <div className="page-bottom-fill" aria-hidden />
     </div>
   );
 };

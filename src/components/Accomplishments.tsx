@@ -60,14 +60,14 @@ const Accomplishments: React.FC = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-lg font-semibold text-white">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                         {accomplishment.title}
                       </h3>
-                      <span className="text-sm text-gray-400">
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
                         {accomplishment.date}
                       </span>
                     </div>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                       {accomplishment.description}
                     </p>
                   </div>
